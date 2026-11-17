@@ -1,0 +1,56 @@
+SONRISAS NFC 2.0 - INSTALACION EN EL ORDENADOR DE LA ONG
+=========================================================
+
+Contenido del pendrive:
+  SonrisasNFC\   el programa (no abrir desde aqui)
+  INSTALAR.bat   instala o actualiza el programa
+  LEEME.txt      este archivo
+
+IMPORTANTE: el programa nuevo NO trae datos. Los copia del programa antiguo
+en el momento de instalarlo, asi que entran todos los usuarios registrados
+hasta ese dia.
+
+
+1. ANTES DE EMPEZAR (en el ordenador de la ONG)
+   - Cierre el programa antiguo.
+   - Busque su archivo de datos, ong_usuarios.db (esta en la carpeta del
+     programa antiguo: ...\ONG_NFC_Deploy_APP\dist\ONG_Sonrisas\).
+   - Copie ese archivo al pendrive como copia de seguridad. No lo borre ni
+     lo mueva de su sitio.
+
+2. INSTALAR
+   - Doble clic en INSTALAR.bat (si Windows avisa, "Mas informacion" >
+     "Ejecutar de todas formas").
+   - Se crea el acceso directo "Sonrisas NFC" en el escritorio y el programa
+     se abre solo.
+   - Use la misma cuenta de usuario de Windows con la que se trabaja a diario:
+     los datos quedan guardados en esa cuenta.
+
+3. IMPORTAR LOS DATOS (solo la primera vez)
+   - Al abrirse, el programa busca el archivo ong_usuarios.db y muestra cuantos
+     usuarios tiene y la fecha de la ultima visita. Compruebe que la fecha es
+     la del ultimo dia de reparto y pulse "Importar".
+   - Si no lo encuentra, pulse "Elegir archivo..." y seleccionelo a mano.
+   - Al terminar aparece un resumen: usuarios, tarjetas y visitas importadas.
+
+4. COMPROBAR
+   - Pase una tarjeta por el lector: debe abrirse la ficha de esa persona.
+   - El indicador de abajo a la izquierda debe decir "Lector listo".
+
+5. DESPUES
+   - A partir de ese momento use SOLO el programa nuevo. Lo que se registre en
+     el antiguo ya no pasa al nuevo.
+   - Quite el acceso directo del programa antiguo para evitar confusiones (no
+     borre su carpeta hasta pasadas unas semanas).
+
+Si hay que repetir la importacion (por ejemplo, porque se siguio usando el
+programa antiguo): cierre Sonrisas NFC, borre el archivo
+   %LOCALAPPDATA%\SonrisasCanarias\NFC\sonrisas.db
+y abra de nuevo el programa: volvera a ofrecer la importacion.
+
+Datos y copias de seguridad:
+   %LOCALAPPDATA%\SonrisasCanarias\NFC\
+   (copia automatica diaria en la subcarpeta "copias")
+
+ACTUALIZACIONES FUTURAS: copie la nueva carpeta SonrisasNFC al pendrive junto
+a INSTALAR.bat y ejecutelo. Los datos no se tocan.

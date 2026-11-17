@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sonrisas-nfc"
+dynamic = ["version"]
+description = "Gestión de beneficiarios y atenciones con tarjetas NFC para ONG Sonrisas Canarias"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "PySide6>=6.6",
+    "pyscard>=2.0.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5", "pyinstaller>=6.6"]
+
+[project.gui-scripts]
+sonrisas-nfc = "sonrisas_nfc.app:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "sonrisas_nfc.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+sonrisas_nfc = ["assets/*.png", "assets/*.ico", "assets/fonts/*", "assets/iconos/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+# RUF001-3: tildes y signos del español en textos. E501: el formateador ya ajusta el código;
+# solo quedan largas algunas cadenas de estilos (QSS) y HTML.
+ignore = ["RUF001", "RUF002", "RUF003", "E501"]

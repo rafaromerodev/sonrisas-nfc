@@ -1,0 +1,34 @@
+# --- Datos personales: NUNCA al repositorio ---
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+copias/
+*.csv
+informe_*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Empaquetado
+build/
+dist/
+entrega/
+*.spec.bak
+packaging/Output/
+
+# Entorno
+.vscode/
+.idea/
+*.log
+Thumbs.db
