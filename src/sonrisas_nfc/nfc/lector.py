@@ -82,7 +82,7 @@ class LectorNFC(QThread):
             return
         self._uid_presente = uid
         if uid:
-            log.info("Tarjeta detectada: %s", uid)
+            log.info("Tarjeta detectada: …%s", uid[-4:])  # solo el final: el UID identifica a la persona
             self.tarjeta_detectada.emit(uid)
         else:
             self.tarjeta_retirada.emit()

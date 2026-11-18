@@ -221,6 +221,13 @@ class InformesService:
         return inf
 
 
+def _celda_segura(valor: object) -> object:
+    """Evita la inyección de fórmulas al abrir el CSV en Excel (=, +, -, @, tabulador, retorno)."""
+    if isinstance(valor, str) and valor[:1] in ("=", "+", "-", "@", chr(9), chr(13)):
+        return "'" + valor
+    return valor
+
+
 def exportar_csv(informe: Informe, destino: Path) -> None:
     """CSV con ``;`` y BOM para que Excel en español lo abra directamente."""
     with open(destino, "w", newline="", encoding="utf-8-sig") as f:
@@ -228,5 +235,6 @@ def exportar_csv(informe: Informe, destino: Path) -> None:
         w.writerow(["Expediente", "Documento", "Nombre y apellidos", "Zona", "Atenciones", "Última atención"])
         for d in informe.detalle:
             w.writerow(
-                [d.expediente, d.documento, d.nombre_completo, d.zona, d.atenciones, f"{d.ultima:%d/%m/%Y}"]
+                [_celda_segura(v) for v in (d.expediente, d.documento, d.nombre_completo, d.zona)]
+                + [d.atenciones, f"{d.ultima:%d/%m/%Y}"]
             )
