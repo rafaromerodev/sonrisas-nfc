@@ -2,7 +2,7 @@
 
 **NFC-based beneficiary and attendance management for a food bank run by a non-profit in the Canary Islands.**
 
-I designed and built this Windows desktop application for [ONG Sonrisas Canarias](https://ongsonrisascanarias.es), which replaced paper records and binders with NFC cards. It has been in daily use at the organisation since September 2025. I also redesigned the organisation's website.
+A Windows desktop application I built for the food bank of ONG Sonrisas Canarias. It identifies each person with an NFC card and records their attendance. Version 1 has been in use since September 2025; this repository is version 2, a complete rewrite.
 
 ![Python](https://img.shields.io/badge/Python_3.11-3776AB?logo=python&logoColor=white)
 ![Qt](https://img.shields.io/badge/PySide6_(Qt_6)-41CD52?logo=qt&logoColor=white)
@@ -18,13 +18,11 @@ I designed and built this Windows desktop application for [ONG Sonrisas Canarias
 
 ## Context
 
-The organisation gives out food to families. Each person has a social-services file with an expiry date. At every visit, staff had to identify the person, check that the file was still valid and log the visit, all on paper. Those logs feed the reports the organisation must submit to public bodies and sponsors.
+The organisation serves families at its food bank. Each person has a social-services file with an expiry date and an NFC card. When the card is read, the person has to be identified, the file checked for validity and the attendance recorded. Those records feed the reports the organisation submits to public bodies and sponsors.
 
-## Version 1: going digital
+## Version 1
 
-The first version swapped paper for NFC cards. Staff tap a card on a USB reader, the person's record opens, and the visit is logged. It was built with **Python, PyQt5 and SQLite** and went into daily use in September 2025.
-
-By August 2026 it held **487 beneficiaries, 486 cards and 2,447 recorded visits**.
+The first version was built with **Python, PyQt5 and SQLite** and has been in use since September 2025, with **487 beneficiaries and 2,447 visits** recorded.
 
 ## Version 2: a rewrite driven by an audit
 
@@ -126,7 +124,7 @@ Migrating from v1 is covered in [`docs/MIGRACION.md`](docs/MIGRACION.md) (Spanis
 
 ## My role
 
-Sole developer: data model, implementation, NFC integration, testing, packaging and migration of the production data. I also redesigned [ongsonrisascanarias.es](https://ongsonrisascanarias.es).
+Sole developer: data model, implementation, NFC integration, testing, packaging and migration from version 1.
 
 ## License
 

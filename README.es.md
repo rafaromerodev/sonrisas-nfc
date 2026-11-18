@@ -53,7 +53,7 @@ Esta versión 2 es una reescritura completa, a partir de una auditoría del cód
 Los informes se exportan a PDF desde la pantalla *Informes*.
 Todas las capturas usan **datos ficticios** generados por `sonrisas_nfc.demo`.
 
-El diseño sigue la identidad de la web de la ONG ([ongsonrisascanarias.es](https://ongsonrisascanarias.es)):
+El diseño sigue la identidad visual de la ONG:
 azul cielo y amarillo sol, contornos en tinta con sombras sólidas y las tipografías Fredoka y Nunito.
 
 ## Arquitectura
